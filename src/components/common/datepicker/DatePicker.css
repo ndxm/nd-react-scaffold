@@ -1,0 +1,28 @@
+.date-span{
+    vertical-align: middle;
+}
+.date-input{
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    height: 30px;
+    font-family: Roboto, sans-serif;
+    font-size: 15px;
+    color: #666;
+}
+
+.date-input-disabled{
+    color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.date-input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #666;
+}
+.date-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: black;
+}
+.date-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #666;
+}

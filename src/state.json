@@ -1,0 +1,23 @@
+{
+  "auth": {},
+  "curModule": "",
+  "pagedListData": {
+    "data": [],
+    "pagination": {
+      "index":0,
+      "pages":20,//总页数
+      "total":400,//总记录数
+      "size":20//每页记录数
+    },
+    "endpoint":"xx/yy/zz",
+    "status":"LOADING",//"LOADED"
+    "selection":[],//选中的行
+    "filters":{
+      "fieldName":["option1", "option2"]
+    }
+  },
+  "detailData":{
+
+  },
+  "router": {}
+}

@@ -1,0 +1,40 @@
+.list-table{
+
+}
+
+.list-table{
+    width: 100%;
+    font-size: 14px;
+    border-top: 1px solid #e7eaec;
+}
+
+.list-table a {
+    text-decoration: none;
+    color: #00c;
+}
+.list-table a:hover {
+    text-decoration: underline;
+}
+.list-table th,
+.list-table td {
+    padding: 0px 15px;
+    text-align: left;
+}
+.list-table th{ line-height:50px; }
+.list-table td{ line-height:45px;
+    position: relative;}
+.list-table tr {
+    border-bottom: 1px solid #e7eaec;
+}
+.list-table tbody tr:nth-child(odd) {
+    background: rgba(238, 238, 238, 0.3);
+}
+
+.list-table tbody tr:hover {
+    background: rgba(238, 238, 238, 0.8);
+    color: #000;
+}
+
+.list-table td a.active {
+    font-weight: bold;
+}

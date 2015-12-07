@@ -1,0 +1,9 @@
+.borderRadius-s {
+  border-radius: 5px;
+}
+.borderRadius-m {
+  border-radius: 10px;
+}
+.borderRadius-l {
+  border-radius: 50%;
+}

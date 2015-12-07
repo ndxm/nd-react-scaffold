@@ -1,0 +1,72 @@
+.checkbox {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  border: 2px solid #CCC;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  border-radius: 2px;
+  vertical-align: sub;
+  cursor: pointer;
+}
+.checkbox::before {
+  content: '';
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 16px;
+  position: absolute;
+  width: 6px;
+  height: 10px;
+  border: 1px solid #FFF;
+  border-width: 0 2px 2px 0;
+  left: 4px;
+  top: 1px;
+  display: none;
+  transform:rotate(40deg) translateZ(0);
+}
+.checkbox:global(.isActive) {
+  background: #009688;
+  border-color: #009688;
+}
+.checkbox:global(.isActive)::before {
+	display:block;
+}
+.btn {
+  border: 1px solid #d9d9d9;
+  padding: 3px 5px;
+  border-radius: 3px;
+  transition: color 1s, border-color 1s;
+  color: indianred;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px #d9d9d9;
+  display: none;
+}
+
+.selected {
+  background: rgba(238, 238, 238, 0.9) !important;
+  color: #656565 !important;
+}
+.selected td:first-child:before{
+  content: " ";
+  display: block;
+  height: 45px;
+  position: absolute;
+  width: 2px;
+  background-color: #66CCFF;
+  left: 0px;
+  top: 0px;
+}
+.deleteBtn {
+  cursor: pointer;
+  visibility: visible;
+  vertical-align: middle;
+}
+.tr:hover .deleteBtn {
+  visibility: visible;
+}
+
+.statusItem{
+  color: #FF9800;
+}

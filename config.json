@@ -1,0 +1,7 @@
+{
+  "host": "ohw-collection.dev.web.nd",
+  "uc_uri": "http://101uccenter.beta.web.sdp.101.com/v0.93/",
+  "cs_uri":"http://betacs.101.com/v0.1/",
+  "cscommon_uri":"http://cscommon.beta.web.sdp.101.com/v0.1/",
+  "avatar_path":"http://betacs.101.com/v0.1/static/preproduction_content_cscommon/avatar"
+}

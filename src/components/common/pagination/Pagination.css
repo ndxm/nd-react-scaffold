@@ -1,0 +1,44 @@
+.c-pagination {
+    display: block;
+    padding: 10px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.c-pagination__item {
+    display: inline-block;
+}
+
+.c-pagination__item > a {
+    text-decoration: none;
+    color: #666;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
+    border: 1px solid #e7eaec;
+    margin-right: 5px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.c-pagination__item > a:hover, .c-pagination__item--active > a {
+    background-color: #66CCFF;
+    color: #fff;
+}
+
+.c-pagination__item--disabled {
+    opacity: .8;
+}
+
+.c-pagination__item--disabled > a {
+    cursor: not-allowed;
+}
+
+.c-pagination__item--relate {
+    border: none;
+    width: auto;
+    margin-left: 20px;
+    color: #000;
+}

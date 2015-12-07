@@ -1,0 +1,45 @@
+.c-pagination {
+    display: block;
+    padding: 10px;
+    list-style: none;
+}
+
+.c-pagination__item {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.c-pagination__item > a {
+    text-decoration: none;
+    color: #666;
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    width: 35px;
+    border: 1px solid #e7eaec;
+    margin-right: 15px;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.c-pagination__item--active > a {
+    background-color: #66CCFF;
+    color: #fff;
+}
+
+.c-pagination__item--relate {
+    border: none;
+    width: auto;
+    margin-right: 20px;
+    color: #000;
+    vertical-align: middle;
+}
+
+.c-pagination__item--show > a {
+    cursor: default;
+}
+
+.c-status> a{
+    background-color: #BABABA;
+}

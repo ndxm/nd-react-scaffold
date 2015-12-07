@@ -1,0 +1,135 @@
+.sliderbg {
+    z-index: 100;
+    width : 48px;
+    height : 300px;
+    max-height : 300px;
+    background: url('../../../../img/slider_bg.png') no-repeat;
+    padding: 40px 0px 40px 0px;
+    position: relative; 
+}
+
+.slider {
+    z-index: 400;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    width : 48px;
+    height : 200px;
+    /* background: grey; */
+    /* margin: 20px auto; */
+    max-width: 48px;
+    display: block;
+    /* box-shadow: inset 0 1px 3px rgba(0,0,0,.3); */
+    position: relative; 
+}
+
+.sliderprogress {
+    z-index: 100;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    /* width : 48px; */
+    left: 21px; 
+    width: 5px;
+    /*max-height : 200px; */
+    background: rgba(0,100,254,0.8);
+    max-width: 48px;
+    display: block;
+    position: relative; 
+}
+
+.handle:active {
+    background: #ccc;
+}
+.handle {
+    z-index: 500;
+    font-size: 20px;
+    line-height: 12px;
+    font-weight: bold;
+    color: #F00;
+    height: 11px;
+    width: 23px; 
+    margin: 0 10px 0 12px;
+    background: #fff;
+    border: 2px solid #666;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: -5px;
+}
+
+.handleinner {
+    z-index: 600;
+    display:inline-block;
+    background: #f00;
+    margin: 2px 0 0 0;
+    width: 13px;
+    height: 3px;
+}
+
+.handleinner:after {
+    content: '-';
+    visibility: hidden;
+}
+
+.slider .bar, 
+.bar-0 {
+    width: 4px;
+    background: #0f0;
+}
+.bar-1 {
+    width: 4px;
+    background: #f00;
+}
+
+.counter {
+    text-align:center;
+    width: 48px;
+    height: 50px;
+    margin: 40px auto 0 auto;
+    padding-top: 10px;
+    clear: both;
+    display: block;
+    position:relative;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#000;
+    overflow: hidden;
+}
+
+.plus {
+    z-index: 300px;
+    position: absolute;
+    top: 0px;
+    margin: 0 8px 0 8px;
+    width: 30px;
+    text-align: center;
+    /* background-color: grey; */
+    cursor: pointer;
+    font-weight:bold;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#000;
+}
+.minus {
+    z-index: 300px;
+    position: absolute;
+    font-weight:bold;
+    top: 260px;
+    margin: 0 8px 0 8px;
+    width: 30px;
+    text-align: center;
+    /* background-color: grey; */
+    cursor: pointer;
+    font-weight:bold;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#000;
+}
+
+.plus:hover, .minus:hover {
+    color: #666;
+}
+
+.plus:active, .minus:active {
+    border: 2px solid rgba(0,0,0,0);
+}

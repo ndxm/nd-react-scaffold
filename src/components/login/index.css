@@ -1,0 +1,135 @@
+body{
+    background-color: #E6E8EB;
+}
+.loginBody {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 383px;
+    background:  url("../../../img/login-bg.png") #2CB1ED  bottom center no-repeat;
+}
+
+.loginHi {
+    position: absolute;
+    z-index: 3;
+    top: -195px;
+    width: 400px;
+    height: 195px;
+    background:url("../../../img/login-hi.png")   top center no-repeat;
+}
+.focusPassword{
+    background-position: bottom center;
+}
+.loginRoad {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: 383px;
+    height: 35px;
+    background:url("../../../img/login-road.png") #A4E3FF  center center repeat-x
+}
+
+.c-form__btn {
+    composes: btn-Orange from '../common/css/btn.css';
+    width: 100%;
+    height: 45px;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.c-form__btn--disabled {
+    cursor: not-allowed;
+    background-color: #aaa;
+}
+
+.c-form__label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 3px;
+    top:8px;
+}
+.c-form-pwd{
+    background-image: url("../../../img/input_icons.png");
+    background-position: 0 -147px;
+    background-repeat: no-repeat;
+}
+.c-form-name{
+    background-image: url("../../../img/input_icons.png");
+    background-position: 0 -68px;
+    background-repeat: no-repeat;
+}
+
+.c-form__err {
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    color: red;
+    padding: 0 5px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.c-form {
+    line-height: 1.5;
+    padding:20px 20px;
+}
+
+.c-form__input {
+    position: relative;
+    width: 360px;
+    margin-bottom: 10px;
+}
+input[type=checkbox]{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.c-form__inputBox {
+    border-radius: 0px;
+    padding: 2px 5px;
+    line-height: 43px;
+    height: 43px;
+    border: 1px solid rgba(0, 0, 0, .12);
+    display: block;
+    padding-left: 30px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.c-form__inputBox--err {
+    border-color: red;
+}
+
+.c-form__checkbox {
+    padding-left: 80px;
+    margin-bottom: 5px;
+}
+
+.siteTitle {
+    background-color: #293541;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    font-size: 18px;
+    padding-left: 20px;
+    font-family: Tahoma, Arial, Helvetica, "Microsoft YaHei", "����", sans-serif;
+    font-weight: normal;
+    margin: 0;
+}
+
+.loginPanel {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 300px;
+    box-shadow: 0 0 8px rgba(4, 0, 0, .3);
+    background-color: #fff;
+    width: 400px;
+}
+.loginFormBtm .c-form__err {
+    float: left;
+}
