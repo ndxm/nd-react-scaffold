@@ -21,11 +21,10 @@ function auth(state = initAuthState, action) {
             };
             let accessToken = resp["accessToken"];
             let macKey = resp["macKey"];
+
             authUtils.saveAuth(accessToken, macKey, userInfo);
 
-
-
-            return {userInfo, macKey, accessToken};//Object.assign({}, state, {userInfo, macKey, token});
+            return Object.assign({}, state, {userInfo, macKey, accessToken});
         case LOGIN_FAILURE:
             return Object.assign({}, state, {error: action.error});
         case LOGOUT:
