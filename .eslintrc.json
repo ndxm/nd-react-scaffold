@@ -1,0 +1,6 @@
+{
+    "extends": "rackt",
+    "rules": {
+        "no-duplicate-rule": 0
+    }
+}
