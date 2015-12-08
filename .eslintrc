@@ -3,7 +3,7 @@
   "plugins": [
     "react"
   ],
-  //ÒÔÏÂ×¢ÊÍµÄÊÇÔÚeslint-config-racktÖÐ¶¨Òå¹ýµÄ
+  //ä»¥ä¸‹æ³¨é‡Šçš„æ˜¯åœ¨eslint-config-racktä¸­å®šä¹‰è¿‡çš„
 //  "ecmaFeatures": {
 //    "jsx": true,
 //    "modules": true
@@ -30,6 +30,9 @@
 //    "space-before-blocks": [ 2, "always" ],
 //    "space-before-function-paren": [ 2, { "anonymous": "always", "named": "never" } ]
     "react/display-name": 1,
-    "react/jsx-boolean-value": 1
+    "react/jsx-boolean-value": 1,
+    "no-extra-semi": 2,
+    "semi": [2, "always"],
+    "indent": 2
   }
 }
