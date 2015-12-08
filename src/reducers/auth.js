@@ -23,6 +23,8 @@ function auth(state = initAuthState, action) {
             let macKey = resp["macKey"];
             authUtils.saveAuth(accessToken, macKey, userInfo);
 
+
+
             return {userInfo, macKey, accessToken};//Object.assign({}, state, {userInfo, macKey, token});
         case LOGIN_FAILURE:
             return Object.assign({}, state, {error: action.error});

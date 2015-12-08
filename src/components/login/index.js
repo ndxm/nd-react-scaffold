@@ -21,10 +21,16 @@ export default React.createClass({
     },
 
     componentDidMount() {
-        if (this.props.isLoggedIn) {
-            if(this.props.roleName == "ADMIN"){
-                this.props.redirectToTasks();
-            }
+        //if (this.props.isLoggedIn) {
+        //    if(this.props.roleName == "ADMIN"){
+        //        this.props.redirect();
+        //    }
+        //}
+    },
+
+    componentWillReceiveProps(nextProps){
+        if (nextProps.isLoggedIn) {
+            nextProps.redirect();
         }
     },
 

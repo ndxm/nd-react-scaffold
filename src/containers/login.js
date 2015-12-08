@@ -17,8 +17,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onLogin: (user) => {dispatch(login(user.name, user.password));dispatch(pushState(null, '/tasks'))} ,
-    redirectToTasks: () => dispatch(pushState(null, '/tasks')),
+    onLogin: (user) => dispatch(login(user.name, user.password)) ,
+    redirect: () => dispatch(pushState(null, '/')),
   }
 }
 
