@@ -6,7 +6,7 @@ import createHistory from 'history/lib/createHashHistory';
 //import { createHistory } from 'history';
 import getRoutes from '../routes';
 import thunk from 'redux-thunk';
-import apiRequester from '../middleware/apiRequester';
+import apiRequester from '../middleWare/apiRequester';
 import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
 

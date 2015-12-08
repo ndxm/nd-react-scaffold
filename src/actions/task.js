@@ -2,7 +2,7 @@
  * Created by Administrator on 2015/12/7.
  */
 
-import { REQUEST_API } from '../middleware/apiRequester';
+import { REQUEST_API } from '../middleWare/apiRequester';
 import AppService from '../services/appService';
 
 

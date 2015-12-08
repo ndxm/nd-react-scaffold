@@ -3,7 +3,7 @@ import { reduxReactRouter } from 'redux-router';
 import createHistory from 'history/lib/createBrowserHistory';
 import routes from '../routes';
 import thunk from 'redux-thunk';
-import apiRequester from '../middleware/apiRequester';
+import apiRequester from '../middleWare/apiRequester';
 import rootReducer from '../reducers';
 
 const finalCreateStore = compose(

@@ -1,7 +1,7 @@
 /**
  * Created by alex wei on 2015/12/7.
  */
-import { REQUEST_API } from '../middleware/apiRequester';
+import { REQUEST_API } from '../middleWare/apiRequester';
 import UcService from '../services/ucService';
 import authUtils from '../utils/authUtils';
 
