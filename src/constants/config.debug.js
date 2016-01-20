@@ -1,4 +1,4 @@
-//����
+//测试
 const CONFIG = {
     restfulApi : {
         host : 'ohw-collection.dev.web.nd',
@@ -16,8 +16,11 @@ const CONFIG = {
     weibo:{
         host : 'microblog.debug.web.nd',
         version : 'v0.1'
+    },
+    interaction:{
+        host : 'interaction.debug.web.nd',
+        version : 'v0.1'
     }
-}
-
+};
 
 export default CONFIG;

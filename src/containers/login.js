@@ -5,7 +5,7 @@ import { Provider, connect } from 'react-redux'
 import { pushState } from 'redux-router'
 
 import { login } from '../actions/auth.js'
-import LoginView from '../components/login/index.js'
+import LoginView from '../components/login/login.js'
 
 function mapStateToProps (state) {
   return {

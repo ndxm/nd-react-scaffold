@@ -7,11 +7,12 @@ import createHistory from 'history/lib/createHashHistory';
 import getRoutes from '../routes';
 import thunk from 'redux-thunk';
 import apiRequester from '../middleWare/apiRequester';
+import assembleApiRequester from '../middleWare/assembledApiRequester.js'
 import createLogger from 'redux-logger';
 import rootReducer from '../reducers';
 
 const finalCreateStore = compose(
-  applyMiddleware(thunk, apiRequester),
+  applyMiddleware(thunk, apiRequester, assembleApiRequester),
   reduxReactRouter({ getRoutes, createHistory }),
   applyMiddleware(createLogger()),
   DevTools.instrument()

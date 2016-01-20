@@ -3,6 +3,16 @@
  */
 var path = require('path');
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var fs = require('fs');
+
+var replaceThis ='<div id="root"></div>';
+var withThis ='<div id="root"></div>' +
+    '<script src="/static/vendors.bundle.js"></script>'+
+    '<script src="/static/bundle.js"></script>';
+
+var cnt = fs.readFileSync('index-template.html');
+fs.writeFileSync('index.html', cnt.toString().replace(replaceThis, withThis).replace(/\<title.*title\>/, '<title>Î¢²© Web</title>'));
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -47,8 +57,15 @@ module.exports = {
       ],
       loaders: ['style', 'css', 'autoprefixer?{browsers:["> 5%", "ie 9"]}']
     }, {
+      test: /\.json$/,
+      include: [
+        path.resolve(__dirname, 'img/smiley')
+      ],
+      loaders: ['json']
+    }, {
       test: /\.(svg|png|jpg|jpeg|gif)$/,
       loaders: ['file']
     }]
   }
+  ,externals: {CONFIG: "CONFIG"}
 };

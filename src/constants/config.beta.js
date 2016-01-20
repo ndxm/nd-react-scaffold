@@ -1,4 +1,4 @@
-//����
+// 预生产
 const CONFIG = {
     restfulApi : {
         host : 'ohw-collection.dev.web.nd',
@@ -14,10 +14,14 @@ const CONFIG = {
         avatar : 'http://betacs.101.com/v0.1/static/preproduction_content_cscommon/avatar'
     },
     weibo:{
-        host : 'microblog.debug.web.nd',
+        host : 'microblog.beta.web.sdp.101.com',
+        version : 'v0.1'
+    },
+    interaction:{
+        host : 'interaction.beta.web.sdp.101.com',
         version : 'v0.1'
     }
-}
+};
 
 
 export default CONFIG;

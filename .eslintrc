@@ -33,6 +33,6 @@
     "react/jsx-boolean-value": 1,
     "no-extra-semi": 2,
     "semi": [2, "always"],
-    "indent": 2
+    "indent": [2,4]
   }
 }

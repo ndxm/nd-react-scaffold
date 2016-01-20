@@ -1,29 +1,29 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 module.exports = {
   devtool: 'eval',
   entry: {
     app: [
-      './src/app'
+      './src/index'
     ],
-    vendors: ['react', 'react-dom', 'jquery', 'q', 'react-router',  'rc-tabs', 'rc-switch', 'crypto-js', 'flux', 'object-assign']
+    vendors: ['react', 'react-dom', 'react-redux', 'redux', 'jquery', 'q', 'react-router',  'crypto-js', 'flux', 'object-assign']
   },
   output: {
-    path: path.join(__dirname, '/dist'),
+    path: path.join(__dirname, 'dist'),
+    publicPath: '/dist/',
     filename: '[name].[chunkhash].js'
   },
   plugins: [
-    // FIXME webpack 的 bug，见 https://github.com/webpack/webpack/issues/1315，回头需要给 vendors.js 同样加上 chunkhash
-    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
-    , new ExtractTextPlugin('app.[contenthash].css', {
+    new webpack.DefinePlugin({
+            'process.env': {NODE_ENV: JSON.stringify('production')}
+    }),
+    new ExtractTextPlugin('app.[contenthash].css', {
       allChunks: true
-    }), new HtmlWebpackPlugin({
-      title: '手写数据标注系统',
-      template: 'index-template.html',
-      inject: 'body'
-    }), new webpack.optimize.UglifyJsPlugin({
+    }),
+    new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       },
@@ -31,10 +31,13 @@ module.exports = {
         comments: false
       }
     }),
-
-    new webpack.DefinePlugin({
-      'process.env': {NODE_ENV: JSON.stringify('production')}
-    })
+    new HtmlWebpackPlugin({
+      title: '微博WEB',
+      template: 'index-template.html',
+      inject: 'body',
+      filename:'../index.html'
+    }), //根目录
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.bundle.js')
   ],
   resolve: {
     modulesDirectories: [
@@ -44,7 +47,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel?optional[]=runtime'],
+      loaders: ['babel?optional[]=runtime'],
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
@@ -52,16 +55,26 @@ module.exports = {
         path.resolve(__dirname, 'node_modules'),
         path.resolve(__dirname, 'style')
       ],
-      loader: ExtractTextPlugin.extract('style', 'css?modules!autoprefixer?{browsers:["> 5%", "ie 9"]}')
-    },{
+      loaders: ['style', 'css?modules&localIdentName=[name]__[local]___[hash:base64:5]', 'autoprefixer?{browsers:["> 5%", "ie 9"]}']
+    }, {
       test: /\.css$/,
       include: [
         path.resolve(__dirname, 'style')
       ],
-      loader: ExtractTextPlugin.extract('style', 'css?autoprefixer?{browsers:["> 5%", "ie 9"]}')
+      loader: ExtractTextPlugin.extract('style', 'css?modules!autoprefixer?{browsers:["> 5%", "ie 9"]}')
+      /*
+      loaders: ['style', 'css', 'autoprefixer?{browsers:["> 5%", "ie 9"]}']
+      */
     }, {
-      test: /\.(svg|png|jpg|jpeg|gif)$/i,
+      test: /\.json$/,
+      include: [
+        path.resolve(__dirname, 'img/smiley')
+      ],
+      loaders: ['json']
+    }, {
+      test: /\.(svg|png|jpg|jpeg|gif)$/,
       loaders: ['file']
     }]
   }
+  ,externals: {CONFIG: "CONFIG"}
 };

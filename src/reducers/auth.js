@@ -10,8 +10,6 @@ const initAuthState = authUtils.getAuth();
 function auth(state = initAuthState, action) {
     switch (action.type) {
         case LOGIN_SUCCESS:
-            console.log(action.type);
-            console.dir(action.response)
             const resp = action.response;
             let userInfo = {
                 userName: resp.username,

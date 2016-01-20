@@ -6,11 +6,20 @@ import tasks from './containers/tasks';
 
 
 export default function getRoutes({ getState,dispatch }) {
+    function requireAuth(nextState, replaceState, cb) {
+        setTimeout(() => {
+            if (!getState().auth) {
+                replaceState(null,'/login');
+            }
+            cb();
+        },0);
+    }
+
     return (
         <Router>
             <Redirect from="/" to="/tasks" />
             <Route path="login" component={login} />
-            <Route path="/" component={index}>
+            <Route path="/" component={index} onEnter={requireAuth}>
                 <Route path="tasks" component={tasks} />
             </Route>
         </Router>

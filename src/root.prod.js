@@ -4,8 +4,8 @@ import { ReduxRouter } from 'redux-router';
 
 export default class Root extends Component {
   render() {
-    const { store } = this.props;
-    return (
+      const { store } = this.props;
+      return (
       <Provider store={store}>
         <ReduxRouter />
       </Provider>
@@ -14,5 +14,5 @@ export default class Root extends Component {
 }
 
 Root.propTypes = {
-  store: PropTypes.object.isRequired
+    store: PropTypes.object.isRequired
 };

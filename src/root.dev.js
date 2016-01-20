@@ -5,8 +5,8 @@ import DevTools from './containers/devTools';
 
 export default class Root extends Component {
   render() {
-    const { store } = this.props;
-    return (
+      const { store } = this.props;
+      return (
       <Provider store={store}>
         <div>
           <ReduxRouter />
@@ -18,5 +18,5 @@ export default class Root extends Component {
 }
 
 Root.propTypes = {
-  store: PropTypes.object.isRequired
+    store: PropTypes.object.isRequired
 };

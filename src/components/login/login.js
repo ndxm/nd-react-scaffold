@@ -1,13 +1,13 @@
 /**
  * Created by hjx on 11/3/2015.
  */
-import styles from './index.css'
-import React from 'react'
-import Router from 'react-router'
-const {Navigation}  = Router;
+import styles from './login.css';
+import React from 'react';
+import Router from 'react-router';
+const { Navigation }  = Router;
 
 export default React.createClass({
-    mixins: [Navigation],
+    mixins: [ Navigation ],
 
     getInitialState: function () {
         return {
@@ -17,18 +17,16 @@ export default React.createClass({
             userClick: false,
             loginErr: '',
             isFocusPassword: false
-        }
+        };
     },
 
     componentDidMount() {
-        //if (this.props.isLoggedIn) {
-        //    if(this.props.roleName == "ADMIN"){
-        //        this.props.redirect();
-        //    }
-        //}
+        if (this.props.isLoggedIn) {
+            this.props.redirect();
+        }
     },
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         if (nextProps.isLoggedIn) {
             nextProps.redirect();
         }
@@ -37,17 +35,17 @@ export default React.createClass({
     handleUsernameChange: function (e) {
         this.setState({
             username: e.currentTarget.value.trim()
-        })
+        });
     },
     handlePasswordChange: function (e) {
         this.setState({
             password: e.currentTarget.value.trim()
-        })
+        });
     },
     handleToggle: function (e) {
         this.setState({
             showPassword: e.currentTarget.checked
-        })
+        });
     },
     handleFormSubmit: function (e) {
         e.preventDefault();
@@ -56,19 +54,19 @@ export default React.createClass({
             loginErr: ''
         });
         if (this.state.username === '' || this.state.password === '') {
-            return
+            return;
         }
 
         this.props.onLogin({
-            name: (this.state.username + '@OHW'),
+            name: (/@/.test(this.state.username)?this.state.username:this.state.username + '@ndtest'),
             password: this.state.password
-        })
+        });
     },
     blurPassword: function () {
 
         this.setState({
             isFocusPassword: false
-        })
+        });
     },
     focusPassword: function () {
         if (this.state.showPassword) {
@@ -76,13 +74,13 @@ export default React.createClass({
         }
         this.setState({
             isFocusPassword: true
-        })
+        });
     },
     render: function () {
         let errForUsername, errForPassword;
         if (this.state.userClick === true) {
             errForUsername = this.state.username === '' ? '请输入用户名' : '';
-            errForPassword = this.state.password === '' ? '请输入密码' : ''
+            errForPassword = this.state.password === '' ? '请输入密码' : '';
         }
 
         return (
@@ -92,12 +90,12 @@ export default React.createClass({
                 </div>
                 <div className={styles.loginPanel}>
                     <div
-                        className={styles.loginHi + "   " + (this.state.isFocusPassword?styles.focusPassword:"")}></div>
-                    <h1 className={styles.siteTitle}>手写数据标注系统</h1>
+                        className={styles.loginHi + '   ' + (this.state.isFocusPassword?styles.focusPassword:'')}></div>
+                    <h1 className={styles.siteTitle}>微博</h1>
                     <form noValidate onSubmit={this.handleFormSubmit} className={`${styles['c-form']}`}>
                         <div>
                             <div className={`${styles['c-form__input']}`}>
-                                <span className={styles['c-form__label']+" "+styles['c-form-name']}></span>
+                                <span className={styles['c-form__label']+' '+styles['c-form-name']}></span>
                                 <input
                                     className={errForUsername ? `${styles['c-form__inputBox']} ${styles['c-form__inputBox--err']}` : `${styles['c-form__inputBox']}`}
                                     placeholder="工号/学号"
@@ -107,7 +105,7 @@ export default React.createClass({
                                 <span className={`${styles['c-form__err']}`}>{errForUsername}</span>
                             </div>
                             <div className={`${styles['c-form__input']}`}>
-                                <span className={styles['c-form__label'] +" "+styles['c-form-pwd']}></span>
+                                <span className={styles['c-form__label'] +' '+styles['c-form-pwd']}></span>
                                 <input
                                     className={errForPassword ? `${styles['c-form__inputBox']} ${styles['c-form__inputBox--err']}` : `${styles['c-form__inputBox']}`}
                                     type={this.state.showPassword ? 'text' : 'password'} value={this.state.password}
@@ -129,6 +127,6 @@ export default React.createClass({
                     </form>
                 </div>
             </div>
-        )
+        );
     }
-})
+});
