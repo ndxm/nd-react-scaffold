@@ -47,7 +47,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel?optional[]=runtime'],
+      loaders: ['babel?presets[]=es2015,presets[]=react,plugins[]=transform-runtime'],
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
