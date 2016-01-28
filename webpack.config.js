@@ -12,7 +12,7 @@ var withThis ='<div id="root"></div>' +
     '<script src="/static/bundle.js"></script>';
 
 var cnt = fs.readFileSync('index-template.html');
-fs.writeFileSync('index.html', cnt.toString().replace(replaceThis, withThis).replace(/\<title.*title\>/, '<title>Î¢²© Web</title>'));
+fs.writeFileSync('index.html', cnt.toString().replace(replaceThis, withThis).replace(/\<title.*title\>/, '<title>Hey front end</title>'));
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -41,7 +41,7 @@ module.exports = {
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['react-hot', 'babel?optional[]=runtime'],
+      loaders: ['react-hot', 'babel?presets[]=es2015,presets[]=react,plugins[]=transform-runtime'],
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
